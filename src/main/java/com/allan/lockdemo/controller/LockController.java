@@ -6,20 +6,21 @@ import org.junit.Test;
 
 import javax.annotation.Resource;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class LockController {
-    private int TicketNum = 100;
+    private int TicketNum = 50;
 
     /**
      * 基于并发包的锁
      */
 //    private Lock lock=new ReentrantLock();
 
-  /*  @Resource(name = "mySqlLockServer")
-   private Lock lock;*/
+    @Resource(name = "mySqlLockServer")
+   private Lock lock;
 
-    @Resource(name = "redisLockServer")
-    private Lock lock;
+   /* @Resource(name = "redisLockServer")
+    private Lock lock;*/
 
 
 
