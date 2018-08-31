@@ -16,11 +16,11 @@ public class LockController {
      */
 //    private Lock lock=new ReentrantLock();
 
-    @Resource(name = "mySqlLockServer")
-   private Lock lock;
+//    @Resource(name = "mySqlLockServer")
+//   private Lock lock;
 
-   /* @Resource(name = "redisLockServer")
-    private Lock lock;*/
+    @Resource(name = "redisLockServer")
+    private Lock lock;
 
 
 

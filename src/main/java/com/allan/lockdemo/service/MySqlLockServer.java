@@ -10,9 +10,10 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 /**
- * 基于MySQL的锁
+ * 基于MySQL的锁：
+ * 数据库乐观锁实现
  */
-@Service("mySqlLockServer")
+@Service
 public class MySqlLockServer implements Lock {
 
     /**

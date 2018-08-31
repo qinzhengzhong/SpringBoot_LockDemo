@@ -1,0 +1,20 @@
+
+----------2018.09.01 更新-----------------------------------
+1、完善了基于MySQL，Redis的分布式锁，连接jedis客户端后释放连接池。
+
+2、数据库安全方面：使用jasypt 对数据库密码加密，数据库密码不在明文显示，
+  具体怎么配置，请参看技术个人博客：https://blog.csdn.net/qinzzjs47/article/details/82182623
+
+3、添加说明文档，把每一次更新记录在案。
+
+4、新增Redisconfig配置文件类，添加MySQL锁的建表语句，具体如下：
+
+    -- 基于MySQL分布式锁的建表语句
+    CREATE TABLE `t_lock` (
+      `id` int(10) NOT NULL COMMENT '主键',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+--------------------------------------------------------

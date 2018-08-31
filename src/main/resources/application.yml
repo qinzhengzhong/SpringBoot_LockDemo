@@ -2,12 +2,17 @@
 server:
   port: 8082
 
+# 数据库密码加密配置
+jasypt:
+  encryptor:
+    password: mypassword
+
 #数据库连接配置
 spring:
     datasource:
         url: jdbc:mysql://localhost:3306/springboot_demo?characterEncoding=UTF-8
         username: root
-        password: qinzz@allan!
+        password: ENC(7ZWWzPKyjk1kB8SEKTSFTpsCiHtoxsKM) # 启动类配置注解 @EnableEncryptableProperties 以启动该功能
 #      使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -60,9 +65,11 @@ pagehelper:
     pageSizeZero: true
     params: count=countSql
 
-#加载自定义日志文件
-#logging:
-#  config: classpath:log4j2.xml
+#控制台输入sql信息，日志级别：debug
+debug: true
+logging:
+  level:
+    com.allan.lockdemo.mapper: debug  # 打印mapper下的所有SQL
 
 
 
